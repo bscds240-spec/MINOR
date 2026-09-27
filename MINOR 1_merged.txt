@@ -1,0 +1,2287 @@
+﻿Practical No : 1 
+
+  
+
+Aim : Fundamentals of R 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Name : Yash J Mhatre 
+
+Class : TYBSc.DS 
+
+Roll No: 28 
+
+Sub: Regression Analysis 
+Using R programming 
+
+Sign:  
+
+ 
+
+
+
+Yash Mhatre    Roll No: 28 
+
+ 
+
+Q.1 Marks obtained by 10 students in a class test are given below: 
+
+15,27,30,12,29,9,35,25,28,16 
+
+i) Create a vector of marks with name marks. 
+
+ii) From above vector of marks, display the list with marks>25.  
+
+marks <- c(15, 27, 30, 12, 29, 9, 35, 25, 28, 16)  
+
+marks  
+
+marks[marks > 25] 
+
+Output:  
+
+ 
+
+ 
+
+Q.2 Create a Vectors x and y of numbers 
+
+2,5, 3,7,5,8,4,2,7 and 2,4,7 respectively. Create vectors x+y, x/y, x*y. 
+
+Code:  
+
+x <- c(2, 5, 3, 7, 5, 8, 4, 2, 7) 
+
+y <- c(2, 4, 7) 
+
+x + y 
+
+x / y 
+
+Output:  
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+REGRESSION ANALYSIS USING R PROGRAMMING 
+
+
+
+Yash Mhatre    Roll No: 28 
+
+ 
+
+Q.3 Vector x is of first 10 naturals numbers. 
+
+Code:  
+
+x <- 1:10 
+
+df <- data.frame( 
+
+  Number = x, 
+
+  Reciprocal = 1/x, 
+
+  Square = x^2, 
+
+  Log10 = log10(x), 
+
+  Log = log(x) 
+
+) 
+
+Df 
+
+ 
+
+Output:  
+
+ 
+
+ 
+
+ 
+
+ 
+
+REGRESSION ANALYSIS USING R PROGRAMMING 
+
+
+
+Yash Mhatre    Roll No: 28 
+
+Q.4 Suppose age is a vector containing ages of 10 persons as 
+22,27,31,40,30,25,19,20,24,35 
+
+(i) Access age of fourth person. 
+
+(ii) Create a vector ‘age 30’with age of person>30. 
+
+(iii) Access age of last 3 persons. 
+
+(iv) Find number of elements in vector age. 
+
+(v) Access ages of persons except 5th and 7th 
+
+(vi) Create a vector ‘age2’ with age of persons between 20 and 25. 
+
+Code:  
+
+age <- c(22, 27, 31, 40, 30, 25, 19, 20, 24, 35) 
+
+age[4] 
+
+age30 <- age[age > 30] 
+
+age30 
+
+age[8:10] 
+
+length(age) 
+
+age[-c(5, 7)] 
+
+age2 <- age[age >= 20 & age <= 25] 
+
+age2 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+REGRESSION ANALYSIS USING R PROGRAMMING 
+
+
+
+Yash Mhatre    Roll No: 28 
+
+Output:  
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+REGRESSION ANALYSIS USING R PROGRAMMING 
+
+
+
+Yash Mhatre    Roll No: 28 
+
+Q.5 Following are Height (in cms) and weight (in Kgs) of 10 boys. Prepare 
+a data frame of height and weight. 
+
+Height 140 137 150 147 139 140 150 132 138 140 
+
+Weight 55 57 59 62 61 60 60 58 59 57 
+
+Using the above data frame 
+
+(i) Create a vector of boys with height > 145 cms. 
+
+(ii) Create a vector of boys with weight >55kg. 
+
+(iii) Create a data frame of the boys with height > 140 cms. 
+
+Code:  
+
+height <- c(140, 137, 150, 147, 139, 140, 150, 132, 138, 140) 
+
+weight <- c(55, 57, 59, 62, 61, 60, 60, 58, 59, 57) 
+
+boys <- data.frame(height, weight) 
+
+boys 
+
+height[height > 145] 
+
+weight[weight > 55] 
+
+boys[boys$height > 140, ] 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+REGRESSION ANALYSIS USING R PROGRAMMING 
+
+
+
+Yash Mhatre    Roll No: 28 
+
+Output:  
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+REGRESSION ANALYSIS USING R PROGRAMMING 
+
+
+
+Yash Mhatre    Roll No: 28 
+
+Q.6 Create a data frame of the following two vectors: 
+
+Price 10 15 30 42 50 60 
+
+Quantity 4 20 15 10 16 8 
+
+Add vector/variable named value =Price*Quantity in the created data 
+frame. 
+
+Code:  
+
+Price <- c(10,15,30,42,50,60) 
+
+ Quantity <- c(4,20,15,10,16,8)  
+
+sales <- data.frame(Price, Quantity) 
+
+ sales$Value <- sales$Price * sales$Quantity 
+
+ sales 
+
+Output:  
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+REGRESSION ANALYSIS USING R PROGRAMMING 
+
+
+
+Yash Mhatre    Roll No: 28 
+
+Q.7 Create a vector from numbers 5, 2, 7, 3, 2, 1, 9, 0, 8. Create a matrix 
+from this vector and obtain transpose, determinant and inverse of this 
+matrix. 
+
+Code:  
+
+x <- c(5,2,7,3,2,1,9,0,8) 
+
+m <- matrix(v, nrow=3, ncol=3)  
+
+m  
+
+t(m)  
+
+det(m)  
+
+solve(m) 
+
+Output:  
+
+  
+
+ 
+
+ 
+
+ 
+
+REGRESSION ANALYSIS USING R PROGRAMMING 
+
+
+
+Yash Mhatre    Roll No: 28 
+
+Q.8 Answer the following: 
+
+(i) Generate 5 random observation between 1 to 100 with replacement 
+
+(ii) Generate 6 random numbers between 1 and 40 without replacement 
+
+(iii) Generate sequence of numbers (0,10) at fixed interval of 0.2 and 2.8 
+sample(1:100, 5, replace = TRUE) 
+
+Code:  
+
+sample(1:100, 5, replace=TRUE) 
+
+ sample(1:40, 6, replace=FALSE)  
+
+seq(0,10,by=0.2)  
+
+seq(0,10,by=2) 
+
+ 
+
+Output:  
+
+ 
+
+REGRESSION ANALYSIS USING R PROGRAMMING 
+
+
+
+Practical no. 2  
+
+Aim:  
+Q.1 Access stockloss data from R and answer the following  
+Q.2 Using Road_Accidents dataset, plot the following graphs  
+Q.3 Following table gives the birth rate per thousand of different countries over 
+the certain period   
+Q.4 The following represents maximum and minimum temperatures of the four 
+metropolitan cities in India.  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+Name: Yash Mhatre 
+
+Class: TYBSc.DS  
+Roll No. :28  
+Subject: Regression Analysis 
+Using R Programing  
+ Sign: 
+ 
+ 
+ 
+ 
+ 
+  
+
+
+
+Yash Mhatrei                                                                                                                                            Roll no: 28  
+
+  
+Q.1 Access stockloss datafrom R and answer the following:  
+a. Plot histogram and boxplot of Air flow.  
+b. Change the binwidth to 5 and also add appropriate labels and title to the plot  
+c. Plot Scatter plot of Air flow Vs Water temperature and also give labels, title, colour.  
+  
+Code:  
+ data(stackloss)  
+  
+# View the data  
+stackloss  
+  
+# View column names  
+names(stackloss)  
+  
+  
+"Air.Flow" "Water.Temp" "Acid.Conc." "stack.loss" 
+install.packages("ggplot2")   # Run only once 
+library(ggplot2)  
+ggplot(stackloss, aes(x = Air.Flow)) +  
+  geom_histogram() +  
+  labs(  
+    title = "Histogram of Air Flow",  
+x = "Air Flow",  
+y = "Frequency"  
+  )  
+ggplot(stackloss, aes(y = Air.Flow)) +  
+  geom_boxplot(fill = "skyblue") +   
+labs(  
+    title = "Boxplot of Air Flow",     
+y = "Air Flow"  
+  )  
+ggplot(stackloss, aes(x = Air.Flow)) +  
+  geom_histogram(     
+binwidth = 5,     fill 
+= "skyblue",  
+    color = "black"  
+  ) +   
+labs(  
+    title = "Histogram of Air Flow",  
+x = "Air Flow",  
+y = "Frequency"  
+  )  
+ggplot(stackloss, aes(x = Air.Flow)) +  
+  geom_histogram(     
+binwidth = 5,     fill 
+= "skyblue",  
+
+Regression Analysis Using R Programming  
+
+
+
+Yash Mhatrei                                                                                                                                            Roll no: 28  
+
+    color = "black"  
+  ) +   
+labs(  
+    title = "Histogram of Air Flow",  
+x = "Air Flow",  
+y = "Frequency"  
+  )  
+ggplot(stackloss, aes(x = Air.Flow, y = Water.Temp)) +   
+geom_point(  
+    color = "blue",     
+size = 3   ) +  
+  labs(  
+    title = "Scatter Plot of Air Flow vs Water Temperature",     
+x = "Air Flow",     y = "Water Temperature"  
+  )  
+Output:   
+
+    
+  
+Q.2 Using Road_Accidents dataset, plot the following graphs :  
+a. Simple bar plot of variable Day_of_Week.  
+ Code:  
+names(Road_Accidents)  
+library(ggplot2)  
+
+Regression Analysis Using R Programming  
+
+
+
+Yash Mhatrei                                                                                                                                            Roll no: 28  
+
+  
+head(Road_Accidents) names(Road_Accidents)  
+ggplot(Road_Accidents, aes(x = Day_of_Week)) +  
+  geom_bar(fill = "steelblue") +  
+  labs(  
+    title = "Number of Accidents by Day of Week",     
+x = "Day of Week",  
+    y = "Count of Accidents"  
+  ) +  
+  theme_minimal()  
+  
+Output:   
+  
+
+  
+  
+b. Multiple bar plot of Day_of_Week and Accident_Severity vs Count of Accidents.  
+Code: ggplot(Road_Accidents,  
+       aes(x = Day_of_Week, fill = Accident_Severity)) +  
+  geom_bar(position = "dodge") +  
+  labs(  
+    title = "Accidents by Day of Week and Accident Severity",     
+x = "Day of Week",     y = "Count of Accidents",  
+    fill = "Accident Severity"  
+  ) +  
+  theme_minimal() Output:  
+
+Regression Analysis Using R Programming  
+
+
+
+Yash Mhatrei                                                                                                                                            Roll no: 28  
+
+   
+  
+c. Histogram of Speed_limit i) bin width = 5 ii) color = "lightblue" with Title and labels.  
+Code:  
+ggplot(Road_Accidents, aes(x = Speed_limit)) +  
+  geom_histogram(     
+binwidth = 5,     fill 
+= "lightblue",  
+    color = "black"  
+  ) +   
+labs(  
+    title = "Histogram of Speed Limit",     
+x = "Speed Limit",  
+    y = "Count of Accidents"  
+  ) +  
+  theme_minimal() Output:  
+
+  
+  
+  
+d. Boxplot of Speed_limit and color it according to Accident_Severity with Title and labels.  
+
+Regression Analysis Using R Programming  
+
+
+
+Yash Mhatrei                                                                                                                                            Roll no: 28  
+
+Code: ggplot(Road_Accidents,        
+aes(x = Accident_Severity,            
+y = Speed_limit,            fill = 
+Accident_Severity)) +  
+  geom_boxplot() +  
+  labs(  
+    title = "Speed Limit by Accident Severity",     
+x = "Accident Severity",     y = "Speed 
+Limit",  
+    fill = "Accident Severity"  
+  ) +  
+  theme_minimal() Output:  
+
+  
+  
+e. Frequency polygon of Speed_limit and also color it according to Accident_Severity with 
+Title and labels.  
+Code:  
+ggplot(Road_Accidents,        aes(x = 
+Speed_limit,            color = Accident_Severity)) 
++   geom_freqpoly(binwidth = 5, linewidth = 1) 
++   labs(  
+    title = "Frequency Polygon of Speed Limit by Accident Severity",     
+x = "Speed Limit",     y = "Count of Accidents",  
+    color = "Accident Severity"  
+  ) +  
+  theme_minimal()  
+  
+  
+Output:  
+
+Regression Analysis Using R Programming  
+
+
+
+Yash Mhatrei                                                                                                                                            Roll no: 28  
+
+  
+f. Scatter plot of Latitude vs Longitude and color it according to Accident_Severity with 
+Title and labels.  
+ Code:  
+ggplot(Road_Accidents,  
+       aes(x = Latitude,            
+y = Longitude,  
+           color = Accident_Severity)) +  
+  geom_point(size = 2, alpha = 0.7) +   
+labs(  
+    title = "Road Accidents: Latitude vs Longitude",     
+x = "Latitude",     y = "Longitude",  
+    color = "Accident Severity"  
+  ) +  
+  theme_minimal() Output:  
+
+  
+  
+  
+  
+Q.3  
+
+Following table gives the birth rate per thousand of different countries over the certain 
+period:  
+
+Regression Analysis Using R Programming  
+
+
+
+Yash Mhatrei                                                                                                                                            Roll no: 28  
+
+Country India Germany China Pakistan Sweden  
+Birth Rate 33  16  40  35  15  
+
+Represent the above data using Barplot in R.  
+
+Code: country <- c("India", "Germany", "China", "Pakistan", 
+"Sweden") birth_rate <- c(33, 16, 40, 35, 15)  
+  
+bar <- barplot(birth_rate,                
+names.arg = country,  
+               col = "skyblue",  
+               main = "Birth Rate per Thousand by Country",                
+xlab = "Country",  
+               ylab = "Birth Rate per Thousand",  
+               ylim = c(0, 45))  
+  
+text(x = bar,      y = 
+birth_rate,      labels = 
+birth_rate,  
+     pos = 3)  
+  
+Output:  
+
+  
+  
+  
+  
+  
+Q4.  
+
+The following data represents maximum and minimum temperatures of the four metropolitan 
+cities in India.  
+
+ City  Maximum Temperature (°C) Minimum Temperature (°C)  
+
+Regression Analysis Using R Programming  
+
+
+
+Yash Mhatrei                                                                                                                                            Roll no: 28  
+
+Delhi  40.5  34.7  
+Kolkata  42.8  33.5  
+
+Mumbai  37.8  32.2  
+
+Chennai  39.4  33.1  
+Represent the data using a suitable diagram.  
+
+Code:  
+# Create the data  
+city <- c("Delhi", "Kolkata", "Mumbai", "Chennai")  
+  
+maximum <- c(40.5, 42.8, 37.8, 39.4)  
+minimum <- c(34.7, 33.5, 32.2, 33.1)  
+  
+# Combine maximum and minimum temperatures  
+temperature <- rbind(maximum, minimum)  
+  
+# Create grouped bar chart  
+barplot(temperature,         
+beside = TRUE,         
+names.arg = city,         col 
+= c("red", "blue"),  
+        main = "Maximum and Minimum Temperatures of Cities",         
+xlab = "Cities",         ylab = "Temperature (°C)",  
+        ylim = c(0, 50))  
+  
+# Add legend legend("topright",  
+       legend = c("Maximum", "Minimum"),  
+       fill = c("red", "blue"))  
+  
+  
+  
+  
+  
+  
+  
+Output:  
+
+Regression Analysis Using R Programming  
+
+
+
+Yash Mhatrei                                                                                                                                            Roll no: 28  
+
+  
+
+Regression Analysis Using R Programming  
+
+
+
+ 
+
+Practical No: 3  
+
+Aim:  
+
+Q.1 Using the Road_Accidents dataset, construct the following diagrams  
+
+Q.2 The following table gives the percentage market share of different 
+mobile operating Systems  
+
+Q.3 The following dataset represents the quarterly production (in thousand 
+units) of two factories over one year  
+
+Q.4 The following data represents the primary energy sources used for 
+electricity generation in a region  
+
+Q.5 The following table shows the enrollment of male and female students 
+across different streams in a college  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+Name:Yash Mhatre  
+
+Class: TYBSc.DS    
+
+ Roll no:  28  
+
+Subject: Regression Analysis 
+
+Using R Programming 
+
+        Sign:  
+
+ 
+
+
+
+  
+Yash Mhatre  Roll No: 28  
+Q.1 Using the Road_Accidents dataset, construct the following diagrams:  
+a. Simple Bar Diagram for the variable Junction_Control.  
+b. Subdivided (Stacked) Bar Diagram showing Junction_Control broken 
+
+down by Accident_Severity.  
+c. Multiple (Grouped) Bar Diagram comparing Light_Conditions across 
+
+Accident_Severity.  
+d. Pie Diagram illustrating the proportion of accidents across different 
+
+Vehicle_Type categories.  
+e. Divided Bar Diagram (100% Stacked Bar) showing relative proportions  
+  
+Code:  
+# Q.1 Road_Accidents Dataset # (a) Simple Bar 
+
+Diagram 
+
+barplot(table(Road_Accidents$Junction_Control
+
+), main = "Junction Control", xlab = "Junction 
+
+Control", ylab = "Number of Accidents", col = 
+
+"skyblue", border = "black")  
+
+# (b) Subdivided Bar Diagram  
+
+tab1 <- table(Road_Accidents$Junction_Control, 
+
+Road_Accidents$Accident_Severity) 
+
+barplot(tab1, main = "Junction Control by 
+
+Accident Severity", xlab = "Junction Control", 
+
+ylab = "Number of Accidents", col = 
+
+c("lightgreen", "orange", "red"), legend = 
+
+rownames(tab1)) # (c) Multiple Bar Diagram  
+
+tab2 <- table(Road_Accidents$Light_Conditions, 
+
+Road_Accidents$Accident_Severity) 
+
+barplot(tab2,  
+
+beside = TRUE, main = "Light Conditions by Accident 
+
+Severity", xlab = "Light Conditions", ylab = "Number 
+
+of Accidents", col = c("skyblue", "orange", "red"), 
+
+legend = rownames(tab2)) # (d) Pie Diagram 
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Yash Mhatre  Roll No: 28  
+vehicle_count <- 
+
+table(Road_Accidents$Vehicle_Type) 
+
+pie(vehicle_count, main = "Proportion of Accidents by 
+
+Vehicle Type", col = rainbow(length(vehicle_count))) # 
+
+(e) 100% Stacked Bar Diagram tab3 <- 
+
+table(Road_Accidents$Junction_Control, 
+
+Road_Accidents$Accident_Severity) tab3_prop <- 
+
+prop.table(tab3, margin = 1) barplot(t(tab3_prop), 
+
+beside = FALSE, main = "Relative Proportions of 
+
+Accident Severity", xlab = "Junction Control", ylab = 
+
+"Proportion", col = c("lightgreen", "orange", "red"), 
+
+legend = colnames(tab3_prop))  
+
+Output:  
+
+a)  
+
+ 
+  
+  
+  
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Yash Mhatre  Roll No: 28  
+
+ 
+ 
+
+  
+
+Q.2 The following table gives the percentage market share of different 
+mobile operating systems:  
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Yash Mhatre  Roll No: 28  
+
+ 
+a. Represent the market share data using a Pie Diagram.  
+b. Represent the same data using a Simple Bar Diagram with custom colors 
+
+and proper titles.  
+
+Code:  
+# Data  
+Operating_System <- c("Android", "iOS", "KaiOS", "Others")  
+Market_Share <- c(70.8, 28.4, 0.4, 0.4)  
+# Display data  
+Operating_System 
+Market_Share 
+pie(Market_Share, labels 
+= 
+paste(Operating_System, 
+Market_Share, "%"), main 
+= "Mobile Operating 
+System Market Share", 
+col = c("orange", 
+"skyblue", "green", 
+"purple")) 
+barplot(Market_Share, 
+names.arg = 
+Operating_System, col = 
+c("orange", "skyblue", 
+"green", "purple"), main = 
+"Mobile Operating 
+System Market Share", 
+xlab = "Operating 
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Yash Mhatre  Roll No: 28  
+System", ylab = "Market 
+Share (%)")  
+
+  
+Output:  
+
+  
+Q.3 The following dataset represents the quarterly production (in thousand 
+units) of two factories over one year:  
+
+  
+  
+Code:  
+# Quarterly Production Data  
+Quarter <- c("Q1", "Q2", "Q3", "Q4")  
+Factory_A <- c(45, 55, 60, 50) Factory_B 
+<- c(30, 40, 50, 35)  
+# Display data  
+Quarter  
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Yash Mhatre  Roll No: 28  
+Factory_A Factory_B  
+barplot(rbind(Factory_A, Factory_B),  
+beside = TRUE, names.arg = Quarter, col = 
+c("skyblue", "orange"), main = "Quarterly 
+Production of Two Factories", xlab = "Quarter", 
+ylab = "Production (Thousand Units)") 
+legend("topright", legend = c("Factory A", 
+"Factory B"), fill = c("skyblue", "orange")) 
+Output:  
+
+  
+  
+  
+  
+
+  
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Yash Mhatre  Roll No: 28  
+  
+Q.4 The following data represents the primary energy sources used for 
+electricity generation in a region:  
+  
+
+ 
+a. Represent the energy generation data using a Pie Diagram.  
+b. Represent the data using a Horizontal Bar Diagram Code:  
+  
+# Energy Generation Data  
+Energy_Source <- c("Coal", "Hydroelectric", "Solar", "Wind", "Nuclear")  
+Generation <- c(120, 85, 45, 30, 20)  
+# Display data  
+Energy_Source  
+Generation # Pie Diagram pie(Generation, labels = 
+paste(Energy_Source, Generation, "TWh"), main = "Primary 
+Energy Sources for Electricity Generation", col = c("brown", 
+"skyblue", "yellow", "lightgreen", "gray"))  
+
+  
+# Horizontal Bar Diagram 
+barplot(Generation, 
+names.arg = Energy_Source, 
+horiz = TRUE,  
+col = c("brown", "skyblue", "yellow", "lightgreen", "gray"), 
+
+main = "Electricity Generation by Energy Source", xlab = 
+
+"Generation (TWh)", ylab = "Energy Source") Output:  
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Yash Mhatre  Roll No: 28  
+
+  
+  
+Q.5 The following table shows the enrollment of male and female students 
+across different streams in a college  
+
+ 
+
+ 
+a. Represent the stream-wise student distribution using a Subdivided 
+(Stacked) Bar Diagram.  
+b. Construct a 100% Stacked Bar Diagram to show the gender 
+proportion in each stream  
+  
+Code:  
+# Student Enrollment Data  
+Stream <- c("Science", "Commerce", "Arts", "Computer Science")  
+Male <- c(320, 450, 150, 200)  
+Female <- c(280, 500, 250, 150)  
+# Display data  
+Stream  
+Male  
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Yash Mhatre  Roll No: 28  
+Female  
+# Subdivided (Stacked) Bar Diagram 
+students <- rbind(Male, Female) 
+colnames(students) <- Stream  
+barplot(students, beside = 
+FALSE, col = 
+c("skyblue", "pink"),  
+main = "Stream-wise Student Distribution", 
+xlab = "Stream", ylab = "Number of 
+Students") legend("topright", legend = 
+c("Male", "Female"), fill = c("skyblue", 
+"pink"))  
+# Calculate percentages  
+percentage <- prop.table(students, margin = 2) * 100  
+print(percentage) 
+Output:  
+
+  
+  
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Yash Mhatre  Roll No: 28  
+
+ 
+
+  Regression Analysis Using R Programming  
+
+
+
+Practical No: 4  
+
+Aim:  
+Q.1 Access the stackloss dataset in R and perform the following:  
+Q.2 The following data represents the study hours (X) and exam scores (Y) 
+of 8 students  
+Q.3 Perform regression diagnostics on the simple linear regression model 
+fitted in Q.1 (stack.loss ~ Water.Temp)  
+Q.5 When heteroscedasticity or non-normality is suspected, logarithmic 
+transformation can stabilize variance  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+Name: Yash Mhatre 
+
+Class: TYBSc.DS  
+
+Roll no: 28  
+
+Subject: Regression Analysis 
+
+Using R Programming  
+
+Sign:  
+
+ 
+
+ 
+
+
+
+  
+Yash Mhatre Roll No: 28 
+
+  
+Q.1 Access the stackloss dataset in R and perform the following:  
+a. Fit a simple linear regression model taking stack.loss as the dependent 
+response variable  
+(Y) and Water.Temp as the independent explanatory variable (X). b. 
+Display the summary of the fitted model and report the model 
+coefficients, standard errors, t-statistics, p-values, R2, and F-statistic.  
+c. Plot a scatter plot of Water.Temp vs stack.loss with custom color, labels, 
+and title. Code:  
+
+# Q.1 Stackloss dataset  
+# Load data 
+data(stackloss
+) # View data 
+stackloss  
+# (a) Simple linear regression  
+model <- lm(stack.loss ~ Water.Temp, data = stackloss)  
+# Display model model  
+# (b) Model summary 
+summary(model)  
+# Extract required statistics 
+coef(model) 
+summary(model)$coefficients 
+summary(model)$r.squared 
+summary(model)$adj.r.squared 
+summary(model)$fstatistic  
+# (c) Scatter plot 
+plot(stackloss$Water.Temp, 
+stackloss$stack.loss, col = 
+"blue", pch = 19, xlab = 
+"Water Temperature", ylab = 
+"Stack Loss",  
+main = "Water Temperature vs Stack Loss")  
+# Regression line  
+abline(model, col = "red", lwd = 2)  
+Output: 
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Ayush Patil  Roll No: 35  
+
+  
+
+ 
+Q.2 The following data represents the study hours (X) and exam scores (Y) 
+of 8 students:  
+Study Hours (X) 2 4 5 7 8 10 11 13 Exam 
+Score (Y) 50 58 65 70 78 85 88 95  
+a. Create a data frame in R for the given dataset.  
+
+b. Fit the simple linear regression equation Y = β0 + β1X + ε.  
+c. Obtain the model summary and report the coefficient of determination 
+
+(R2).  
+  
+Code:  
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Yash Mhatre Roll No: 28 
+
+  
+# (a) Create data frame 
+data <- data.frame(  
+Study_Hours = c(2, 4, 5, 7, 8, 10, 11, 13),  
+Exam_Score = c(50, 58, 65, 70, 78, 85, 88, 95)  
+)  
+# View data 
+data  
+# (b) Fit simple linear regression  
+model <- lm(Exam_Score ~ Study_Hours, data = data)  
+# Display model model  
+# (c) Model summary 
+summary(model) # R-
+squared 
+summary(model)$r.square
+d Output: 
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Ayush Patil  Roll No: 35  
+
+  
+
+ 
+Q.3 Perform regression diagnostics on the simple linear regression model 
+fitted in Q.1 (stack.loss ~ Water.Temp):  
+
+a. Display the 4 standard visual diagnostic plots (Residuals vs Fitted,  
+Normal Q-Q, Scale-  
+Location, Residuals vs Leverage) in a 2 × 2 grid.  
+b. Extract the regression residuals using residuals() and test the normality of 
+
+residuals using the Shapiro-Wilk test (shapiro.test()).  
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Yash Mhatre Roll No: 28 
+
+  
+c. Conduct the Durbin-Watson test (dwtest()) to check for residual 
+
+autocorrelation.  
+d. Conduct the Breusch-Pagan test (bptest()) to check for heteroscedasticity.  
+
+Code:  
+# Q.3 Regression Diagnostics  
+# Load dataset 
+data(stackloss) # Fit 
+regression model  
+model <- lm(stack.loss ~ Water.Temp, data = stackloss)  
+#  
+
+# (a) Four diagnostic plots  
+#  
+
+par(mfrow = c(2, 2)) 
+plot(model) 
+par(mfrow = c(1, 1))  
+#  
+
+# (b) Residuals and Shapiro-Wilk  
+#  
+
+res <- residuals(model) 
+# Display residuals res  
+# Shapiro-Wilk test 
+shapiro.test(res)  
+#  
+
+# (c) Durbin-Watson test  
+#  
+
+install.packages("lmtest") # Run only once  
+library(lmtest) 
+dwtest(model)  
+
+#  
+
+# (d) Breusch-Pagan test # 
+
+bptest(model)  
+  
+Output:  
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Ayush Patil  Roll No: 35  
+
+  
+
+ 
+  
+
+ 
+Q.4 When heteroscedasticity or non-normality is suspected, logarithmic 
+transformation can stabilize variance:  
+a. Fit a simple linear regression model with a log-transformed 
+response variable: ln(stack.loss) = β0 + β1 (Water.Temp) + ε.  
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Yash Mhatre Roll No: 28 
+
+  
+b. Obtain the model summary and compare the model output with the 
+untransformed simple linear model.  
+
+Code: # Load 
+dataset 
+data(stackloss)  
+#  
+
+# Original model  
+#  
+
+model_original <- lm(stack.loss ~ Water.Temp, data = stackloss)  
+# Display summary  
+summary(model_original)  
+#  
+
+# Log-transformed model  
+# model_log <- lm(log(stack.loss) ~ 
+Water.Temp, data = stackloss)  
+  
+# Display summary  
+summary(model_log)  
+#  
+
+# Compare R-squared  
+#  
+
+cat("Original Model R-squared:", 
+summary(model_original)$r.squared, "\n") 
+cat("Log-transformed Model R-squared:", 
+summary(model_log)$r.squared, "\n") 
+Output:  
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Ayush Patil  Roll No: 35  
+
+  
+
+  
+
+  Regression Analysis Using R Programming  
+
+
+
+Practical no: 5  
+
+Aim: Weighted Least Square using R  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+Name: Yash Mhatre 
+Class: TYBSc.DS  
+ Roll no: 28  
+Subject:Regression  
+Analysis Using R  
+Programming  
+Sign:  
+
+ 
+ 
+ 
+ 
+ 
+
+
+
+  
+Yash Mhatre  Roll no: 28  
+
+ 
+Q.1 An experiment is performed to study the interaction of certain kinds of elementary 
+particles on collision with proton targets. The experiment was designed to test certain 
+theories about the nature of the strong interaction. The cross-section(crossx) variable is 
+believed to be linearly related to the inverse of the energy (energy has already been 
+inverted). At each level of the momentum, a very large number of observations were 
+taken so that it was possible to accurately estimate the standard deviation of the 
+response (sd).  
+
+ 
+
+ 
+
+Perform the following in R:  
+
+1. Fit an Ordinary Least Squares (OLS) model for crossx on energy and test for 
+heteroscedasticity using the Breusch-Pagan test (bptest()).  
+  
+Code:  
+# Install package (run only once) 
+install.packages("lmtest")  
+
+# Load package library(lmtest)  
+
+# Enter the data data  
+
+<- data.frame( 
+momentum = 1:10, 
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Yash Mhatre  Roll no: 28  
+energy = c(0.345, 
+0.287, 0.251, 0.225,  
+0.207,  0.186,  
+0.161, 0.132, 0.084, 
+0.060), crossx = 
+c(367, 311, 295, 268,  
+253,  239,  
+220, 213, 193, 192), sd 
+= c(17, 9, 9, 7, 7,  
+6, 6, 6, 5, 5)  
+)  
+  
+# OLS model ols_model <- lm(crossx ~ 
+energy, data = data)  
+  
+# Display OLS results 
+summary(ols_model)  
+  
+# Breusch-Pagan test 
+bptest(ols_model)  
+  
+Output:  
+
+ 
+
+  
+2. Define the weights as wi = 1 sd2 and fit the Weighted Least Squares (WLS) model using 
+lm() with the weights argument.  
+Code:  
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Yash Mhatre  Roll no: 28  
+# Calculate weights data$wi  
+<- 1 / (data$sd^2)  
+  
+# Display weights data$wi  
+  
+# Fit WLS model wls_model 
+<lm(crossx ~ energy,  
+
+data = data,  
+weights = wi)  
+  
+# Display WLS results 
+summary(wls_model)  
+  
+Output:  
+
+ 
+  
+3. Compare the regression coefficients, standard errors, and R2 values of the OLS and 
+WLS models. Code:  
+# OLS coefficients and standard errors summary(ols_model)$coefficients  
+
+# WLS coefficients and standard errors summary(wls_model)$coefficients  
+
+# OLS R-squared 
+summary(ols_model)$r.squared  
+  
+# WLS R-squared 
+summary(wls_model)$r.squared  
+  
+Output:  
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Yash Mhatre  Roll no: 28  
+ 
+
+  
+  
+Q.2 In a drug stability evaluation, an antimicrobial product was held at ambient 
+temperature (~68°F) for 12 months. The potency (%) through HPLC was measured, 106 
+colony-forming units (CFU) of Staphylococcus aureus (methicillin-resistant) were exposed 
+to the product for 2 min, and the microbial reductions (log10 scale) were measured. The 
+following table provides the data and weights.  
+
+• Y = potency, the measure of the kill of Staphylococcus aureus following a 2 min exposure; 
+100% fresh product = 5 log10 reduction.  
+
+• x1 = month of test (end of month).  
+
+• x2 = log10 reduction in a 106 CFU population of S. aureus in 2 min.  
+
+• wts = weights  
+ 
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Yash Mhatre  Roll no: 28  
+
+  
+  
+
+ 
+Perform the following in R:  
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Yash Mhatre  Roll no: 28  
+
+1. Fit the multiple OLS model Y = β0 + β1x1 + β2x2 + ε.  
+Code:  
+
+# Install package if required  
+# install.packages("lmtest")  
+
+  
+# Enter the data data  
+<- data.frame(  
+Y = c(100,100,100,98,99,97,96,95,87,90,85,88,84,  
+
+87,79,73,86,70,52),  
+  
+
+x1 = c(1,1,1,3,3,4,4,5,5,6,6,7,7,8,8,9,10,11,12),  
+  
+
+x2 = c(5.0,5.0,5.1,4.8,4.9,4.6,4.7,4.7,4.3,4.0,  
+
+4.4,4.5,3.2,4.4,3.6,4.0,4.2,2.3,0.3),  
+  
+
+wts = c(1.00,1.00,1.00,0.45,0.45,0.23,0.23,0.07,  
+0.07,0.03,0.03,0.24,0.24,0.10,0.10,0.03,  
+0.04,0.03,0.03)  
+
+)  
+
+# Display data data  
+
+#  
+
+# 1. Multiple OLS Model  
+#  ols_model <- 
+
+lm(Y ~ x1 + x2, data = data)  
+
+# Display OLS results 
+summary(ols_model) Output:  
+  
+
+ 
+  
+
+2. Fit the WLS model using the specified wts vector.  
+Code:  
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Yash Mhatre  Roll no: 28  
+
+#  
+
+# 2. Weighted Least Squares Model # 
+
+ 
+  
+
+wls_model <- lm(Y ~ x1 + x2, 
+data = data,  
+
+weights = wts)  
+  
+
+# Display WLS results 
+summary(wls_model) Output:  
+  
+
+ 
+  
+
+3. Obtain diagnostic plots for both models and report whether 
+variance stabilization was achieved.  
+
+Code:   
+
+# Display WLS results 
+summary(wls_model)  
+  
+# OLS diagnostic plots 
+par(mfrow = c(2, 2)) 
+plot(ols_model)  
+  
+# WLS diagnostic plots 
+par(mfrow = c(2, 2)) 
+plot(wls_model) 
+par(mfrow = c(1, 1)) 
+Output:  
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Yash Mhatre  Roll no: 28  
+
+ 
+Q.3 Estimate the demand function model D = β0 + β1P + u using the Weighted Least  
+Square  
+(WLS) method. The data is given below:  
+  
+
+ 
+
+Perform the following in R:  
+
+1. Create a vector of weights where wi =1 Var(ui) Code:  
+# Enter the data  
+D <- c(10, 20, 23, 25, 42)  
+P <- c(8, 7, 6, 4, 3)  
+Var_u <- c(1, 4, 5, 2, 1)  
+  
+# Calculate weights w  
+<- 1 / Var_u  
+  
+# Display weights w  
+
+Output:  
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Yash Mhatre  Roll no: 28  
+ 
+
+  
+2. Fit the WLS regression model using R.  
+
+Code: # Create data frame data  
+<- data.frame(D, P, Var_u, w)  
+  
+# Fit WLS model wls_model  
+<- lm(D ~ P, data = 
+
+data,  
+weights = w)  
+  
+# Display summary 
+summary(wls_model)  
+  
+Output:  
+
+ 
+  
+  
+
+3. Display the summary output, report the fitted regression equation, and interpret 
+the estimated coefficients. Output:  
+
+ 
+Q.4 A financial data analyst is modeling the daily return volatility (Y) of a market index (e.g.,  
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Yash Mhatre  Roll no: 28  
+NIFTY) based on the daily trading volume (X, in millions). It is observed that the variance 
+of the error terms increase proportionally with the trading volume, leading to 
+heteroscedasticity.  
+  
+
+ 
+  
+  
+
+  
+Perform the following in R:  
+
+1. Fit an OLS model Y = β0 + β1X + ε and plot the residuals against the fitted values to 
+visually confirm the presence of heteroscedasticity. Code:  
+# Data  
+X <- c(12, 15, 18, 22, 25, 30, 35, 40)  
+Y <- c(1.5, 2.1, 2.5, 3.8, 4.2, 5.5, 6.8, 8.1)  
+  
+data <- data.frame(X, Y)  
+  
+# OLS Model ols_model <- lm(Y ~ X, 
+data = data)  
+  
+# OLS Summary summary(ols_model)  
+  
+# Residuals vs Fitted Values plot(ols_model$fitted.values, 
+residuals(ols_model), xlab = "Fitted Values",  ylab 
+= "Residuals", main = "OLS: Residuals vs Fitted Values", 
+ pch = 19)  
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Yash Mhatre  Roll no: 28  
+  
+abline(h = 0, lty = 2)= Output:  
+
+ 
+
+  
+2. Assuming the error variance is proportional to the volume (Var(εi)  Xi), define 
+
+the appropriate weights as wi = 1 Xi. Code: # WLS weights data$w <- 1 / data$X  
+  
+# Display weights data Output:  
+
+ 
+  
+
+3. Fit the WLS model using these weights and compare the standard error of the 
+slope coefficient (β1) with that of the OLS model to check for efficiency gains. Code:  
+# WLS Model wls_model <- lm(Y ~ X, data = data, 
+weights = w)  
+  
+# WLS Summary 
+summary(wls_model)  
+  
+# Compare slope standard errors ols_se <- 
+summary(ols_model)$coefficients["X", "Std. Error"] wls_se 
+<summary(wls_model)$coefficients["X", "Std. Error"]  
+
+  Regression Analysis Using R Programming  
+
+
+
+  
+Yash Mhatre  Roll no: 28  
+  
+cat("OLS slope SE =", ols_se, "\n") 
+cat("WLS slope SE =", wls_se, "\n") 
+Output:  
+
+ 
+
+  Regression Analysis Using R Programming  
+
+
+
+Practical no: 6   
+
+Aim: Multiple Linear Regression and Ridge Regression using R   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+     
+   
+   
+  
+  
+  
+  
+  
+   
+
+Name: Yash Mhatre   
+Class: TYBSc.DS   
+ Roll no: 28   
+Subject: Regression   
+Analysis Using R   
+Programming   
+ Sign:  
+ 
+ 
+
+
+
+Yash Mhatre                                                                                                              Roll no: 28 
+
+Q.1 Carry out multiple linear regression analysis for the following dataset whose 
+description is given below: Filename: mammalsize.xlsx Problem: Correlates of brain size 
+Nature of data:   
+
+   
+Background: Data are from American Naturalist (1974) p.593-613. Animals have properties 
+that make them better capable of living and multiplying. One expects that a larger brain 
+may be generally better. But there can be penalties and limitations. One limitation is the 
+need for longer pregnancy and the other is the need to have fewer offspring.   
+   
+Perform the following in R:   
+
+1. Fit the multiple linear regression model taking gestation period as the response 
+Variable (Y) and brain weight, body weight, and litter size as predictor variables.   
+   
+Code:   
+# View the data   
+View(mammalsize)   
+   
+# Check column names names(mammalsize)   
+   
+# Multiple Linear Regression   
+   
+model <- lm(`gestation period (days)` ~    
+              `brain weight (gms)` +    
+              `body weight(kg)` +                 
+`av. Litter size`,             data = 
+mammalsize)   
+   
+# Display regression summary summary(model)   
+   
+Output:  
+
+Regression Analysis Using R Programming   
+
+
+
+Yash Mhatre                                                                                                              Roll no: 28 
+
+   
+   
+
+2. Display the summary output from lm() and report the estimated regression  
+Coefficients, standard errors, t-statistics, p-values, R2, and adjusted R2.   
+
+Code:     summary(model)$coefficients 
+Output:   
+
+   
+   
+
+3. Test the overall significance of the model using the F-test.   
+Code:  model <- lm(`gestation period 
+(days)` ~    
+              `brain weight (gms)` +    
+              `body weight(kg)` +                 
+`av. Litter size`,             data = 
+mammalsize) summary(model) 
+Output:   
+
+   
+   
+4. Perform residual diagnostics: check for normality using shapiro.test() and           
+
+heteroscedasticity using bptest(). Code:   
+
+Regression Analysis Using R Programming   
+
+
+
+Yash Mhatre                                                                                                              Roll no: 28 
+
+   shapiro.test(residuals(model)) 
+
+library(lmtest) bptest(model) Output:   
+
+   
+ Q.2 The following dataset spans the period from 1947 to 1966 and presents observations 
+on the variables: Imports (I), Gross Domestic Product (GDP), Stock Formation (SF), and 
+Consumption (C).   
+
+      
+   
+   
+Perform the following in R:   
+
+Regression Analysis Using R Programming   
+
+
+
+Yash Mhatre                                                                                                              Roll no: 28 
+
+1. Fit the OLS regression model predicting Imports based on GDP, SF, and Consumption.   
+
+Code:   
+
+# Enter data   
+   
+Import <- c(15.9,16.4,19.0,19.1,18.8,20.4,22.7,26.5,28.1,   
+            27.6,26.3,31.1,33.3,37.0,43.3,49.0,50.3,56.6)   
+   
+GDP <- c(149.3,161.2,171.5,175.5,180.8,190.7,202.1,212.4,226.1,   
+         231.9,239.0,258.0,269.8,288.4,304.5,323.4,336.8,353.9)   
+   
+SF <- c(4.2,4.1,3.1,3.1,1.1,2.2,2.1,5.6,5.0,5.1,0.7,5.6,   
+        3.9,3.1,4.6,7.0,1.2,4.5)   
+   
+consp <- c(108.1,114.8,123.2,126.9,132.1,137.7,146.0,154.1,162.3,             
+164.3,167.6,176.8,186.6,199.7,213.9,223.8,232.0,242.9)   
+   
+data <- data.frame(Import, GDP, SF, consp)   
+   
+# OLS regression ols_model <- lm(Import ~ GDP + SF + consp, 
+data = data)   
+   
+summary(ols_model) Output:  
+
+   
+2.Detect multicollinearity by computing the Variance Inflation Factor (VIF) using vif() from 
+the car library.   
+Code:   
+vif(ols_model)  Output:   
+
+Regression Analysis Using R Programming   
+
+
+
+Yash Mhatre                                                                                                              Roll no: 28 
+
+   
+   
+2. Apply Ridge Regression as a remedial measure using lm.ridge() (from MASS) or glmnet.  
+Code:   
+library(MASS)   
+   
+ridge_model <- lm.ridge(Import ~ GDP + SF + consp,                          
+data = data,                         lambda = seq(0, 50, 0.1))   
+   
+ridge_model   
+   
+Output:   
+
+   
+ 4.Find the optimal ridge parameter (λ) and report the penalized ridge regression 
+coefficients.   
+Code:   
+# Find optimal lambda select(ridge_model) # Get the optimal lambda optimal_lambda 
+<- ridge_model$lambda[which.min(ridge_model$GCV)]   
+   
+optimal_lambda ridge_coefficients <-  
+coef(ridge_model)[which.min(ridge_model$GCV), ]   
+   
+ridge_coefficients   
+Output:  
+
+     
+
+Regression Analysis Using R Programming   
+
+
+
+Yash Mhatre                                                                                                              Roll no: 28 
+
+ Q.3 Check for multicollinearity and use remedial measures for the data whose description 
+is given below: File name: Autompg.xlsx Problem: To identify which variables are 
+influencing the miles per gallon (MPG, i.e., fuel consumption) of a car. Nature of Data:   
+
+   
+Background: The data consists of records characterizing various car types. For each car 
+type, the attributes provided include the MPG value measured in a test, the number of 
+engine cylinders, the cylinder displacement in cubic inches, the engine power, the car 
+weight in pounds, the seconds required to accelerate to 100 mph, the production year, and 
+the model name.   
+Perform the following in R:   
+   
+1.Load data, handle any missing values in horsepower, and fit a full multiple linear 
+regression model for mpg against all numeric predictors.  Code: model <- lm(MPG 
+~ cylinders + displacement +  
+horsepower +               weight + accelaration + year + origin,             
+data = Autompg)   
+   
+summary(model)   
+   
+   
+Output:  
+
+Regression Analysis Using R Programming   
+
+
+
+Yash Mhatre                                                                                                              Roll no: 28 
+
+   
+   
+2.compute VIF values to identify highly collinear variables (VIF > 10). Code:   
+model <- lm(MPG ~ cylinders + displacement + horsepower +                
+weight + accelaration + year + origin,             data = Autompg)   
+   
+summary(model)   
+library(car)   
+   
+vif(model)  Output:   
+
+  
+
+    
+3.Perform Ridge Regression on the standardized predictors across a range of λ values.   
+Code:   
+Autompg_clean <- Autompg[   complete.cases(Autompg[, c("MPG", 
+"cylinders", "displacement",   
+                             "horsepower", "weight",   
+                             "accelaration", "year", "origin")]),   
+]   
+   
+# Create predictor matrix x  
+<- model.matrix(   
+  MPG ~ cylinders + displacement + horsepower +     weight 
++ accelaration + year + origin,   data =  
+Autompg_clean   
+)[, -1]   
+
+Regression Analysis Using R Programming   
+
+
+
+Yash Mhatre                                                                                                              Roll no: 28 
+
+   
+# Response variable y <- Autompg_clean$MPG   
+   
+# Ridge Regression ridge  
+<- glmnet(   
+  x, y,   
+  alpha = 0,   standardize = TRUE,    
+lambda = 10^seq(3, -3, length = 100)   
+)   
+   
+ridge   
+Output:   
+
+   
+   
+ 4. Plot the ridge trace curve and state your conclusions regarding coefficient shrinkage.   
+Code:   
+plot(ridge, xvar = "lambda", label = TRUE)   
+Output:   
+
+   
+Q.4 A computer science study evaluates the execution time (Y, in milliseconds) of 
+recursive search algorithms (such as Breadth-First Search and Depth-First 
+Search) based on three highly correlated structural properties of the target 
+graphs: Number of Nodes (X1), Number of Edges (X2), and Maximum Depth  
+(X3).   
+
+Regression Analysis Using R Programming   
+
+
+
+Yash Mhatre                                                                                                              Roll no: 28 
+
+   
+Perform the following in R:   
+1. Fit a full OLS regression model predicting Execution Time using all three graph property 
+predictors.   
+Code:   
+# Enter the data   
+Execution_Time <- c(120, 145, 170, 210, 250, 290, 330)   
+Nodes <- c(50, 65, 80, 100, 125, 150, 180)   
+Edges <- c(48, 62, 79, 102, 130, 155, 185)   
+Depth <- c(15, 20, 25, 30, 38, 45, 55)   
+   
+# Create data frame data <- data.frame(Execution_Time,  
+Nodes, Edges, Depth)   
+   
+# Full OLS regression model model <- lm(Execution_Time 
+~ Nodes + Edges + Depth,             data = data)   
+   
+# Display results  summary(model)   
+   
+Output:  
+
+   
+ 2.   Compute the Variance Inflation Factor (VIF) to prove the presence of severe 
+multicollinearity among the structural properties.   
+Code:   
+library(car)   
+   
+vif(model) Output:   
+
+Regression Analysis Using R Programming   
+
+
+
+Yash Mhatre                                                                                                              Roll no: 28 
+
+   
+   
+3.Perform Ridge Regression to introduce a penalty term.   
+Code:   
+library(glmnet)   
+   
+x <- as.matrix(data[, c("Nodes", "Edges", "Depth")]) y  
+<- data$Execution_Time   
+   
+ridge_model <- glmnet(   
+  x, y,   
+  alpha = 0,   standardize = TRUE,    
+lambda = 10^seq(3, -3, length = 100)   
+)   
+   
+ridge_model  Output:   
+
+   
+
+Regression Analysis Using R Programming
